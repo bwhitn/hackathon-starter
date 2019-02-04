@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    script.
+        function resizeFrame(frame) {
+            frame.style.height=(frame.contentWindow.document.body.scrollHeight + 10) +'px';
+            frame.style.width=(frame.contentWindow.document.body.scrollWidth + 10) + 'px';
+        }
+    iframe(style="margin:0 auto; display:block; border: 0; overflow:hidden;" scrolling="no" src="statuspane" onload!="resizeFrame(this)")
