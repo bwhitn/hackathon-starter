@@ -3,6 +3,6 @@ exports.status = (req, res) => {
       return res.redirect('/');
     }
     res.render('status', {
-        title: 'Server Status'
+        title: 'Status'
     });
 };

@@ -3,6 +3,6 @@ exports.create = (req, res) => {
       return res.redirect('/');
     }
     res.render('publish', {
-        title: 'Publish Document'
+        title: 'Publish'
     });
 };
