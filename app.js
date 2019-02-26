@@ -129,6 +129,9 @@ app.get('/', homeController.index);
 app.get('/status', passportConfig.isAuthenticated, statusController.status)
 app.get('/statuspane', passportConfig.isAuthenticated, expressStatusMonitor.pageRoute);
 app.get('/publish', passportConfig.isAuthenticated, documentController.create);
+app.post('/publish/item', passportConfig.isAuthenticated, documentController.item);
+app.post('/publish/layout', passportConfig.isAuthenticated, documentController.layout);
+app.post('/publish', passportConfig.isAuthenticated, documentController.finalize)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -146,6 +149,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 
 /**
  * API examples routes.
+ * TODO: These are coming out at some point
  */
 app.get('/api', passportConfig.isAuthenticated, apiController.getApi);
 app.get('/api/scraping', passportConfig.isAuthenticated, apiController.getScraping);

@@ -1,3 +1,5 @@
+let document = require("../models/Document");
+
 exports.create = (req, res) => {
     if (!req.user) {
       return res.redirect('/');
@@ -6,3 +8,27 @@ exports.create = (req, res) => {
         title: 'Publish'
     });
 };
+
+exports.item = (req, res) => {
+    if (!req.user) {
+        return res.status(400).end();
+    }
+
+    console.log(req.body);
+}
+
+exports.layout = (req, res) => {
+    if (!req.user) {
+        return res.status(400).end();
+    }
+
+    console.log(req.body);
+}
+
+exports.finalize = (req, res) => {
+    if (!req.user) {
+        return res.status(400).end();
+    }
+
+    console.log(req.body);
+}
